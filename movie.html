@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVIE TICKET</title>
+</head>
+<body>
+    <h1>MOVIE BOOKING</h1>
+    <img src="https://thumbs.dreamstime.com/z/text-movie-time-popcorn-blue-background-flat-lay-top-view-116851055.jpg" alt="MOVIE" height="250" width="500"><br>
+    
+    <form>
+        <label for="movie name">movie name</label>
+        <input type="text" id="name"/>
+        <br>
+        <br>
+        <label for=" name">full name</label>
+        <input type="text" id="name"/>
+        <br>
+        <br>
+        <label for="date">date of booking:</label>
+        <input type="date"/>
+        <br>
+        <br>
+        <label for="time slot">start time(time slot)</label>
+        <input type="time"/>
+        <br><br>
+        <label for="seat type">choose a seat type</label>
+        <select>
+           <option value="lower">lower</option>
+           <option value="middle">middle</option>
+           <option value="upper">upper</option>
+        </select>
+        <br>
+        <br>  
+        <label for="seat number">seat number</label>
+        <input type="number" list="seat number" name="seat number"/>
+        <br><br>
+        
+        <br>
+        <br>
+
+        <label for="phone number">phone no.:</label>
+        <input type="tel"/>
+        <br>
+        <br>
+        <br>
+        
+        <label for="email">email:</label>
+        <input type="email"/>
+        <br>
+        <br>
+        <br>
+        <label for="snacks">snacks</label>
+        <input type="text" list="snacks" name="snacks"/>
+        <datalist id="snacks">
+            <option value="nachos">nachos</option>
+            <option value="popcorn">popcorn</option>
+            <option value="water bottle" selected>water bottle</option>
+            <option value="cold drinks">cold drinks</option>
+        </datalist>
+       <br>       <br>
+       <br>
+       <br>
+
+        <label for="payment method">choose a payment method</label>
+        <select>
+           <option value="upi">upi</option>
+           <option value="debit card">debit card</option>
+           <option value="credit card">credit card</option>
+           <option value="cash">cash</option>
+        </select>
+    <br><br><br>
+    
+
+    <button>submit</button>    
+    </form>
+</body>
+</html>
