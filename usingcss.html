@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>using css</title>
+    <link rel="stylesheet" href="style.css">
+
+<style>
+        p{
+            font-size: 70px;
+            font-weight: bold;
+            letter-spacing: 5px;
+            font-style: italic;
+            color: yellowgreen;
+            background-color: aquamarine;
+        }
+
+        .mytag{
+            font-size: 30px;
+            color: tomato;
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #myid{
+            color: rgb(153, 98, 15);
+            font-size: 20px;
+            font-weight: bolder;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+    </style>
+
+</head>
+<body>
+    <h1 class="mytag" style="color: rgb(170, 64, 64); font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif; text-align: center;">inline css is used to style individual tags</h1>
+    <p class="mytag">internal css is used to style entire page at once.</p>
+    <p id="myid">style tag is used inside head tag</p>
+    <p class="mytag" id="myid">priority:id selector>class selector>name selector</p>
+</body>
+</html>
