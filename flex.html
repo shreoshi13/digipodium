@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <style>
+        .container{
+            display: flex;
+            height: 544px;
+            width: 100%;
+            border: 2px solid blue;
+            flex-direction: row-reverse;
+            flex-wrap: wrap-reverse;
+            flex-flow: column-reverse;
+        }
+        .item{
+            width: 200px;
+            height: 200px;
+            background-color: teal;
+            border: 2px solid black;
+            margin: 10px;
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        this is flex tutorial
+    </h1>
+    <div class="container">
+        <div class="item" id="item-1">1st box</div>
+        <div class="item" id="item-1">2nd box</div>
+        <div class="item" id="item-1">3rd box</div>
+        <div class="item" id="item-1">4th box</div>
+        <div class="item" id="item-1">5th box</div>
+        <div class="item" id="item-1">6th box</div>
+    </div>
+</body>
+</html>
