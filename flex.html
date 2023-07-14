@@ -7,12 +7,13 @@
     <style>
         .container{
             display: flex;
+            align-items: center;
             height: 544px;
             width: 100%;
             border: 2px solid blue;
-            flex-direction: row-reverse;
-            flex-wrap: wrap-reverse;
-            justify-content: space-between;
+           /*flex-direction: row-reverse;
+            /*flex-wrap: wrap-reverse;*/
+           /* justify-content: space-between;*/
         }
         .item{
             width: 100px;
@@ -21,7 +22,21 @@
             border: 2px solid black;
             margin: 10px;
             padding: 3px;
+            /*flex-grow: 1;*/
         }
+        #item-1{
+            flex-grow: item-2;
+           /*flex-shrink: 2;*/
+        }
+        #item-2{
+            flex-grow: item-3;
+           /*flex-shrink: 2;*/
+        }
+        #item-3{
+            flex-grow: item-1;
+            /*flex-shrink: 2;*/
+        }
+        
     </style>
 </head>
 <body>
@@ -30,11 +45,11 @@
     </h1>
     <div class="container">
         <div class="item" id="item-1">1st box</div>
-        <div class="item" id="item-1">2nd box</div>
-        <div class="item" id="item-1">3rd box</div>
-        <div class="item" id="item-1">4th box</div>
+        <div class="item" id="item-2">2nd box</div>
+        <div class="item" id="item-3">3rd box</div>
+       <!--<div class="item" id="item-1">4th box</div>
         <div class="item" id="item-1">5th box</div>
-        <div class="item" id="item-1">6th box</div>
+        <div class="item" id="item-1">6th box</div> -->
     </div>
 </body>
 </html>
