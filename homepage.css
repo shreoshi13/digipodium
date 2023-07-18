@@ -18,3 +18,10 @@ body {
     transform: translate(-50%, -50%);
     color: white;
 }
+.search a {
+    display: flex;
+  }
+  a ion-icon {
+    position: relative;
+    right: 3px;
+  }
