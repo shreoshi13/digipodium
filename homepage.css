@@ -2,6 +2,8 @@ body {
     background: url(https://img.freepik.com/free-photo/studio-shot-pretty-black-woman-with-white-shopping-bag-standing-yellow-background-trendy-spring-fashionable-look_273443-10.jpg);
     background-size: cover;
     position:relative;
+    display: flex;
+    justify-content: left;
 }
 
 .hero_title {
@@ -25,3 +27,4 @@ body {
     position: relative;
     right: 3px;
   }
+  

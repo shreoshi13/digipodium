@@ -94,44 +94,27 @@
     height: 720px;
     width: 1080px;
   }
-  @keyframes slide {
-    0% {
-      left: 0px;
-    }
-    15% {
-      left: 0px;
-    }
-    20% {
-      left: -1080px;
-    }
-    32% {
-      left: -1080px;
-    }
-    35% {
-      left: -2160px;
-    }
-    47% {
-      left: -2160px;
-    }
-    50% {
-      left: -3240px;
-    }
-    63% {
-      left: -3240px;
-    }
-    66% {
-      left: -4320px;
-    }
-    79% {
-      left: -4320px;
-    }
-    82% {
-      left: -5400px;
-    }
-    100% {
-      left: 0px;
-    }
-  }
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+
+.hero {
+    background-image: url('your-image.jpg');
+    background-size: cover;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+
  
   
   .heading1 {
@@ -311,44 +294,7 @@
       position: absolute;
     }
   
-    @keyframes slide1 {
-      0% {
-        left: 0vw;
-      }
-      15% {
-        left: 0vw;
-      }
-      20% {
-        left: -80vw;
-      }
-      32% {
-        left: -80vw;
-      }
-      35% {
-        left: -160vw;
-      }
-      47% {
-        left: -160vw;
-      }
-      50% {
-        left: -240vw;
-      }
-      63% {
-        left: -240vw;
-      }
-      66% {
-        left: -320vw;
-      }
-      79% {
-        left: -320vw;
-      }
-      82% {
-        left: -400vw;
-      }
-      100% {
-        left: 0vw;
-      }
-    }
+
     .menu ul {
       display: flex;
       flex-direction: column;
