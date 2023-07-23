@@ -1,0 +1,18 @@
+//map
+const nums= [6852,696,521,9622,2,684];
+const newnums = [];
+for(let i of nums)
+{
+    console.log(i**2);
+    newnums.push(i**2);
+}
+console.log(newnums);
+
+const result = nums.map( (n) => {return n**2} );
+console.log(result)
+
+const price = [651, 98,20,666,999]
+const result1 = price.map((p)=>{return 0.1*p}) 
+const result2 = price.map((p)=>{return p+0.1*p}) 
+console.log(result1)
+console.log(result2)
