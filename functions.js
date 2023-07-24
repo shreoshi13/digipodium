@@ -27,3 +27,15 @@ const getfactorial = (n)=>{
 };
 const ans = getfactorial(5);
 console.log(ans);
+
+//type4 recursion
+const getfactorialwithrec = (n)=>{
+    if(n==0||n==1){
+        return 1;
+    }
+    
+    let f =  getfactorialwithrec(n-1)*n;
+    return f;
+};
+const ans1 = getfactorialwithrec(5);
+console.log(ans1);
