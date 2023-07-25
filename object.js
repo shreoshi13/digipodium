@@ -55,3 +55,9 @@ console.log(res3)
 const res4 = smartphonelist.filter((phones)=>{return phones.color.includes('blue')&phones.price<70000})
 console.log(res4)
 
+//use map to find all the brands
+const brands = smartphonelist.map((phone)=>{return phone.brand})
+console.log(brands)
+
+//give unique brands
+console.log(new Set(brands))
