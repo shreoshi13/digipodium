@@ -4,14 +4,16 @@ import Home from './components/Home';
 import About from './components/about';
 import Login from './components/Login';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <div >
      <BrowserRouter>
-        <Link to="/home">Home</Link>
+       {/* <Link to="/home">Home</Link>
         <Link to="/about">About</Link>
-        <Link to="/login">Login</Link>
+  <Link to="/login">Login</Link>*/}
+  <Navbar />
 
      <Routes>
       <Route element={ <Home /> } path='home'/>
