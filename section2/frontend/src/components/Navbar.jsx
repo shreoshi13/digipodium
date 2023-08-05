@@ -30,6 +30,27 @@ const Navbar = ()=>{
             Home
             </NavLink>
         </li>
+        <li className="nav-item">
+        <NavLink className="nav-link" to="/about">
+            About
+            </NavLink>
+        </li>
+        <li className="nav-item">
+        <NavLink className="nav-link" to="/event">
+            Event handling
+            </NavLink>
+
+        </li>
+        <li className="nav-item">
+        <NavLink className="nav-link" to="/todo">
+            todo list
+            </NavLink>
+            </li>
+        <li className="nav-item">
+        <NavLink className="nav-link" to="/state">
+          State management
+            </NavLink>
+        </li>
         <li className="nav-item dropdown">
           <a
             className="nav-link dropdown-toggle"

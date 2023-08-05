@@ -20,7 +20,7 @@ const Login = () => {
              <input type="password" style={{width : '80%'}} /> 
              <br />
              <button style = {{marginTop : '35px', width : '180px', height: '45px', marginLeft : '160px',
-              backgroundColor : 'lightgreen', border: 'none', borderRadius: '15px', fontWeight: 'bold'}}>Sign UP</button>
+              backgroundColor : 'lightgreen', border: '1px', borderRadius: '15px', fontWeight: 'bold'}}>Sign UP</button>
 
         </div>
         <div className = 'col-2' style = {{backgroundColor : 'ButtonShadow', width : '40vw', height : '70vh',
@@ -36,7 +36,7 @@ const Login = () => {
              <input type="password" style={{width : '80%'}} /> 
              <br />
              <button style = {{marginTop : '35px', width : '180px', height: '45px', marginLeft : '160px',
-              backgroundColor : 'lightblue', border: 'none', borderRadius: '15px', fontWeight: 'bold'}}>Login</button>
+              backgroundColor : 'lightblue', border: '1px black', borderRadius: '15px', fontWeight: 'bold'}}>Login</button>
 
         </div>
       </div>
