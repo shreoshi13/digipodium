@@ -40,7 +40,7 @@ const Todolist = () => {
                     <ul className='list-group'>
                     {todolist.map((obj, index) => {
                         return <li className='list-group-item'>
-                            { obj.completed ? <span className='badge text-bg-success'>completed</span> : <span className='badge text-bg-danger'>pending</span>}
+                            { obj.completed ? <span className='badge text-bg-success'>completed</span> : <span className='badge text-bg-warning'>pending</span>}
                             <h3 style={{textDecoration:obj.completed?'line-through':''}}>{obj.text}</h3>
                             <button onClick = {() =>{deleteTodo(index)}} className='btn btn-danger'>Delete</button>
                             <button onClick={()=>{completeTodo(index)}} className='btn  btn-primary ms-2'>Complete Task</button>

@@ -46,6 +46,11 @@ const Navbar = ()=>{
             todo list
             </NavLink>
             </li>
+            <li className="nav-item">
+        <NavLink className="nav-link" to="/product">
+            product list
+            </NavLink>
+            </li>
         <li className="nav-item">
         <NavLink className="nav-link" to="/state">
           State management
