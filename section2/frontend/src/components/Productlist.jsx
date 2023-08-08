@@ -41,7 +41,7 @@ const Productlist = () => {
         )
     }
   return (
-    <div>
+    <div className='list-back'>
         <header className='bg-body-secondary'>
         <div className='container py-5'>
             <h1 className='text-center'>product list page</h1>
@@ -59,13 +59,30 @@ const Productlist = () => {
             </div>
 
             </header>
-            <div className='container'>
-            <div className='row mt-4'>
-                {
-                    displayProducts()
-                }
 
-            </div>
+          
+    
+            <div className='container-fluid'>
+                <div className='row'>
+                    <div classname="col-md-3">
+                        <div classname="card mt-4">
+                            <div className='card-body'>
+                                <h3>
+                                    categories
+                                </h3>
+                            </div>
+                        </div>
+                        </div>
+                        <div className='col-md-9'>
+                        <div className='row mt-4'>
+                    {
+                         displayProducts()
+                    }
+
+                         </div>
+                        </div>
+                        </div>
+            
         </div>
         </div>
 

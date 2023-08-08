@@ -1,5 +1,10 @@
 import { useFormik } from 'formik';
 import React from 'react'
+import * as Yup from 'yup';
+const loginSchema = Yup.object().shape({
+  email: Yup.string().email('Invalid email').required('Required'),
+  password: Yup.string().password.required('Required'),
+})
 const Login = () => {
   //initializing formik
   const loginForm = useFormik({
@@ -10,7 +15,8 @@ const Login = () => {
     onSubmit:(values)=>{
         console.log(values);
         //code to submit form to server
-    }
+    },
+    validationSchema : loginSchema
   });
     return (
             <div>
@@ -28,8 +34,11 @@ const Login = () => {
              <h5>Mobile No:</h5>
              <input type="number" style={{width : '80%'}} />
              <h5>Email Id:</h5>
+             <span style={{color:'red',fontSize: '0.7em',marginLeft:10}}>{loginForm.errors.email}</span>
              <input type="email" name='email' onChange={loginForm.handleChange} value={loginForm.values.email} style={{width : '80%'}}  />
              <h5>Password:</h5>
+             <span style={{color:'red',fontSize: '0.7em',marginLeft:10}}>{loginForm.errors.password}</span>
+
              <input type="password" name='password' onChange={loginForm.handleChange} value={loginForm.values.password} style={{width : '80%'}} /> 
              <br />
              <button style = {{marginTop : '35px', width : '180px', height: '45px', marginLeft : '160px',
@@ -43,11 +52,11 @@ const Login = () => {
              <h5 style={{marginTop : '30px'}}>User Name:</h5>
              <input type="text" style={{width : '80%'}}/>
              <h5>Email Id:</h5>
-             <input type="email" style={{width : '80%'}} />
+             <input type="email" name='email' onChange={loginForm.handleChange} value={loginForm.values.email} style={{width : '80%'}} />
              <h5>Password:</h5>
-             <input type="password" style={{width : '80%'}}  />
+             <input type="password" name='password' onChange={loginForm.handleChange} value={loginForm.values.password} style={{width : '80%'}}  />
              <h5>Confirm Password:</h5>
-             <input type="password" style={{width : '80%'}} /> 
+             <input type="password" name='password' onChange={loginForm.handleChange} value={loginForm.values.password} style={{width : '80%'}} /> 
              <br />
              <button style = {{marginTop : '35px', width : '180px', height: '45px', marginLeft : '160px',
               backgroundColor : 'lightblue', border: '1px black', borderRadius: '15px', fontWeight: 'bold'}}>Login</button>
