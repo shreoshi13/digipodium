@@ -56,6 +56,12 @@ const Navbar = ()=>{
           State management
             </NavLink>
         </li>
+        <li className="nav-item">
+        <NavLink className="nav-link" to="/contact">
+            contact us
+            </NavLink>
+
+        </li>
         <li className="nav-item dropdown">
           <a
             className="nav-link dropdown-toggle"

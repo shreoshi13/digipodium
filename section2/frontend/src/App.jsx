@@ -9,6 +9,7 @@ import Eventhandling from './components/Eventhandling';
 import Statemanagement from './components/Statemanagement';
 import Todolist from './components/Todolist';
 import Productlist from './components/Productlist';
+import Contact from './components/Contact';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <Route element={ <Eventhandling /> } path='event'/>
       <Route element={ <Statemanagement /> } path='state'/>
       <Route element={ <Productlist /> } path='product'/>
+      <Route element={ <Contact /> } path='contact'/>
       <Route element={ <Home /> } path='/'/>
      </Routes>
      </BrowserRouter>
