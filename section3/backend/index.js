@@ -1,9 +1,17 @@
 //import express
 const express = require('express');
 
+//importing routers
+const userRouter = require('./routers/userRouter');
+const blogRouter = require('./routers/blogRouter');
+
 //initialize express app
 const app = express();
 const port = 5000;
+
+//middleware
+app.use('/user', userRouter); 
+app.use('/user', blogRouter); 
 
 //routes
 app.get('/', (request,response)=>{
