@@ -11,7 +11,7 @@ const port = 5000;
 
 //middleware
 app.use('/user', userRouter); 
-app.use('/user', blogRouter); 
+app.use('/blog', blogRouter); 
 
 //routes
 app.get('/', (request,response)=>{
