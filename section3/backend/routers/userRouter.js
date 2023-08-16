@@ -26,9 +26,30 @@ router.get('/getall',(req,res)=>{
 
     });
 });
+//:denotes url parameter
+router.get('/getbyemail/:email',(req,res)=>{
+    console.log(req.params.email);
+    //find function matches and returns all the entries
+    //findOne function matches and returns only first entry
+    Model.findOne({email : req.params.email})
+    .then((result) => {
+        res.json(result);
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+})
 //getbyid
-router.get('/getbyid',(req,res)=>{
-    res.send('response from user getbyid');
+router.get('/getbyid/:id',(req,res)=>{
+    
+    //jModel.findOne({_id : req.params.id})
+    Model.findById(req.params.id)
+    .then((result) => {
+        res.json(result);
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 //delete
 router.get('/delete',(req,res)=>{

@@ -1,6 +1,6 @@
 const {Schema, model} = require('../connection');
 
-const mySchema = new Schema({
+const oneSchema = new Schema({
     name : String,
     description : String,
     image : String,
@@ -8,4 +8,4 @@ const mySchema = new Schema({
     review : Number
 });
 
-module.exports = model( 'users', mySchema );
+module.exports = model( 'product', oneSchema );

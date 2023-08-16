@@ -4,6 +4,7 @@ const express = require('express');
 //importing routers
 const userRouter = require('./routers/userRouter');
 const blogRouter = require('./routers/blogRouter');
+const productRouter = require('./routers/productRouter');
 
 //initialize express app
 const app = express();
@@ -13,6 +14,7 @@ const port = 5000;
 app.use(express.json());
 app.use('/user', userRouter); 
 app.use('/blog', blogRouter); 
+app.use('/product', productRouter); 
 
 //routes
 app.get('/', (request,response)=>{
