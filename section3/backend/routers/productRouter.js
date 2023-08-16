@@ -38,7 +38,7 @@ router.get('/getbyid',(req,res)=>{
     });
 });
 //delete
-router.get('/delete',(req,res)=>{
+router.post('/delete',(req,res)=>{
     console.log(req.body);
     new Model(req.body).save()
     .then((result) => {
@@ -50,7 +50,7 @@ router.get('/delete',(req,res)=>{
     });
 });
 //update
-router.get('/update',(req,res)=>{
+router.post('/update',(req,res)=>{
     console.log(req.body);
     new Model(req.body).save()
     .then((result) => {
