@@ -1,70 +1,85 @@
 import { useFormik } from 'formik';
 import React from 'react'
-import * as Yup from 'yup';
-const loginSchema = Yup.object().shape({
-  email: Yup.string().email('Invalid email').required('Required'),
-  password: Yup.string().required('Required'),
-})
-const Login = () => {
-  //initializing formik
-  const loginForm = useFormik({
-    initialValues:{
-      email:"",
-      password:""
-    },
-    onSubmit:(values)=>{
-        console.log(values);
-        //code to submit form to server
-    },
-    validationSchema : loginSchema
-  });
-    return (
-            <div>
-            <h2 className='text-center'>
-                login page
-            </h2>
-    <div className='body' style={{ width : '100%', height : '90vh',backgroundColor : 'lightPink'}}>
-      <div className = 'row' style = {{display : 'flex', justifyContent : 'space-evenly'}}>
-        <div className = 'col-1' style = {{backgroundColor : 'ButtonShadow', width : '40vw', height : '70vh',
-         marginTop : '80px', borderRadius : '40px', border: '10px solid lightGrey'}} >
-            <h3 style = {{textAlign : 'center', fontFamily : 'fantasy', paddingTop : '30px'}}>Sign Up</h3>
-            <form onSubmit={loginForm.handleSubmit}>
-             <h5 style={{marginTop : '30px'}}>Name:</h5>
-             <input type="text" style={{width : '80%'}}/>
-             <h5>Mobile No:</h5>
-             <input type="number" style={{width : '80%'}} />
-             <h5>Email Id:</h5>
-             <span style={{color:'red',fontSize: '0.7em',marginLeft:10}}>{loginForm.errors.email}</span>
-             <input type="email" name='email' onChange={loginForm.handleChange} value={loginForm.values.email} style={{width : '80%'}}  />
-             <h5>Password:</h5>
-             <span style={{color:'red',fontSize: '0.7em',marginLeft:10}}>{loginForm.errors.password}</span>
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
-             <input type="password" name='password' onChange={loginForm.handleChange} value={loginForm.values.password} style={{width : '80%'}} /> 
-             <br />
-             <button style = {{marginTop : '35px', width : '180px', height: '45px', marginLeft : '160px',
-              backgroundColor : 'lightgreen', border: '1px', borderRadius: '15px', fontWeight: 'bold'}}>Sign UP</button>
-              </form>
-        </div>
-        <div className = 'col-2' style = {{backgroundColor : 'ButtonShadow', width : '40vw', height : '70vh',
-         marginTop : '80px', borderRadius : '40px', border: '10px solid lightGrey'}}>
-        <h3 style = {{textAlign : 'center', fontFamily : 'fantasy', paddingTop : '30px'}}>Login</h3>
-        <form onChange={loginForm.handleSubmit}>
-             <h5 style={{marginTop : '30px'}}>User Name:</h5>
-             <input type="text" style={{width : '80%'}}/>
-             <h5>Email Id:</h5>
-             <input type="email" name='email' onChange={loginForm.handleChange} value={loginForm.values.email} style={{width : '80%'}} />
-             <h5>Password:</h5>
-             <input type="password" name='password' onChange={loginForm.handleChange} value={loginForm.values.password} style={{width : '80%'}}  />
-             <h5>Confirm Password:</h5>
-             <input type="password" name='password' onChange={loginForm.handleChange} value={loginForm.values.password} style={{width : '80%'}} /> 
-             <br />
-             <button style = {{marginTop : '35px', width : '180px', height: '45px', marginLeft : '160px',
-              backgroundColor : 'lightblue', border: '1px black', borderRadius: '15px', fontWeight: 'bold'}}>Login</button>
-              </form>
+const Signup = () => {
+
+  const navigate = useNavigate();
+
+  const signupForm = useFormik({
+    initialValues: {
+      name : "",
+      email : "",
+      password : "",
+      age : ""
+    },
+    onSubmit : async ( values, { resetForm, setSubmitting } ) => {
+      console.log(values);
+      setSubmitting(true);
+
+      const res = await fetch('http://localhost:5000/user/add', {
+        method: 'POST',
+        body: JSON.stringify(values),
+        headers: {
+          'Content-Type' : 'application/json'
+        }
+      });
+
+      console.log(res.status);
+      setSubmitting(false);
+
+      if(res.status === 200){
+        Swal.fire({
+          icon : 'success',
+          title : 'WellDone!',
+          text : 'Registered Successfully 😎'
+        })
+        navigate('/login');
+      }else{
+        Swal.fire({
+          icon : 'error',
+          title : 'Error',
+          text : 'Something went wrong'
+        })
+      }
+
+      // write code to submit form to server
+    }
+  });
+
+  return (
+    <div>
+      <div className="w-25">
+        <div className="card">
+          <div className="card-body">
+            <h3 className="text-center">Signup Form</h3>
+            <hr />
+
+            <form onSubmit={signupForm.handleSubmit}>
+              <label htmlFor="">Name</label>
+              <span style={{color: 'red', fontSize: '0.7em', marginLeft: 10}}>{signupForm.errors.name}</span>
+              <input type="text" className="form-control mb-3" name="name" onChange={signupForm.handleChange} value={signupForm.values.name} />
+              
+              <label htmlFor="">Email Address</label>
+              <span style={{color: 'red', fontSize: '0.7em', marginLeft: 10}}>{signupForm.errors.email}</span>
+              <input type="email" className="form-control mb-3" name="email" onChange={signupForm.handleChange} value={signupForm.values.email} />
+
+              <label htmlFor="">Password</label>
+              <span style={{color: 'red', fontSize: '0.7em', marginLeft: 10}}>{signupForm.errors.password}</span>
+              <input type="password" className="form-control mb-3" name="password" onChange={signupForm.handleChange} value={signupForm.values.password} />
+              
+              <label htmlFor="">Age</label>
+              <span style={{color: 'red', fontSize: '0.7em', marginLeft: 10}}>{signupForm.errors.age}</span>
+              <input type="number" className="form-control mb-3" name="age" onChange={signupForm.handleChange} value={signupForm.values.age} />
+
+              <button disabled={signupForm.isSubmitting} className="btn btn-primary w-100 mt-5">Submit</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
-    </div>
-  )
-  }
+  );
+}
+
 export default Login;
