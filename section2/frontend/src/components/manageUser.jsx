@@ -26,7 +26,7 @@ const ManageUser = () => {
                 <th>Name</th>
                 <th>E-Mail</th>
                 <th>Age</th>
-                <th colSpan={2}>Actions</th>
+                <th colSpan={2} className='text-center'>Actions</th>
               </tr>
             </thead>
             <tbody>
