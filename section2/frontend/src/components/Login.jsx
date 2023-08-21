@@ -42,11 +42,27 @@ const Login = () => {
           title : 'Error',
           text : 'Something went wrong'
         })
-      }
-
+      };
+      
       // write code to submit form to server
     }
   });
+  const uploadFile = async (e)=>{
+    const file = e.target.files[0];
+    const fd = new FormData();
+    fd.append('myfile',file);
+    const res = await fetch('http://localhost:5000/util/uploadfile',{
+      method : 'POST',
+      body : fd
+    });
+    console.log(res.status);
+    if(res.status === 200){
+      console.log('successfully uploaded');
+    }else{
+      console.log('error occured');
+    }
+  }
+
 
   return (
     <div>
@@ -73,6 +89,7 @@ const Login = () => {
               <span style={{color: 'red', fontSize: '0.7em', marginLeft: 10}}>{signupForm.errors.age}</span>
               <input type="number" className="form-control mb-3" name="age" onChange={signupForm.handleChange} value={signupForm.values.age} />
 
+                  <input type="file" onChange={uploadFile} />
               <button disabled={signupForm.isSubmitting} className="btn btn-primary w-100 mt-5">Submit</button>
             </form>
           </div>

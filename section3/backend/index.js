@@ -4,6 +4,7 @@ const express = require('express');
 //importing routers
 const userRouter = require('./routers/userRouter');
 const blogRouter = require('./routers/blogRouter');
+const utilRouter = require('./routers/util');
 const productRouter = require('./routers/productRouter');
 const cors = require('cors');
 
@@ -18,6 +19,7 @@ app.use(cors({
   }));
 app.use('/user', userRouter); 
 app.use('/blog', blogRouter); 
+app.use('/util', utilRouter); 
 app.use('/product', productRouter); 
 
 //routes
