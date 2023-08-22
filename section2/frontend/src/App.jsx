@@ -11,11 +11,15 @@ import Todolist from './components/Todolist';
 import Productlist from './components/Productlist';
 import Contact from './components/Contact';
 import ManageUser from './components/manageUser';
+import { Toaster } from 'react-hot-toast';
+import { AnimatePresence } from 'framer-motion';
 
 function App() {
   return (
     <div >
+      <Toaster position='top-right' />
      <BrowserRouter>
+     <AnimatePresence>
       <Navbar />
 
      <Routes>
@@ -27,9 +31,11 @@ function App() {
       <Route element={ <Statemanagement /> } path='state'/>
       <Route element={ <Productlist /> } path='product'/>
       <Route element={ <ManageUser /> } path='manage'/>
+      <Route element={ <updateUser /> } path='update/:id'/>
       <Route element={ <Contact /> } path='contact'/>
       <Route element={ <Home /> } path='/'/>
      </Routes>
+     </AnimatePresence>
      </BrowserRouter>
       
     </div>
