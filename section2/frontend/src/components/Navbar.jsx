@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 const Navbar = ()=>{
+  const [currentUser, setCurrentUser] = useState(
+    JSON.parse(sessionStorage.getItem('user'))
+  );
     return(
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
   <div className="container-fluid">
@@ -25,6 +28,12 @@ const Navbar = ()=>{
             login
             </NavLink>
         </li>
+        <li className="nav-item">
+        <NavLink className="nav-link" to="/signup">
+            Signup
+            </NavLink>
+        </li>
+        
         <li className="nav-item">
         <NavLink className="nav-link" to="/home">
             Home
@@ -73,6 +82,15 @@ const Navbar = ()=>{
             </NavLink>
 
         </li>
+        {
+          currentUser !== null ? (
+            <li className="nav-item">
+        <NavLink className="nav-link" to="/manage">
+            Log Out
+            </NavLink>
+        </li>
+          ): ""
+        }
         <li className="nav-item dropdown">
           <a
             className="nav-link dropdown-toggle"

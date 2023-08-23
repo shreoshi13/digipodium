@@ -14,6 +14,7 @@ import ManageUser from './components/manageUser';
 import { Toaster } from 'react-hot-toast';
 import { AnimatePresence } from 'framer-motion';
 import UpdateUser from './components/updateUser';
+import SignUp from './components/SignUp';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
       <Route element={ <Todolist /> } path='todo'/>
       <Route element={ <About /> } path='about'/>
       <Route element={ <Login /> } path='login'/>
+      <Route element={ <SignUp /> } path='SignUp'/>
       <Route element={ <Eventhandling /> } path='event'/>
       <Route element={ <Statemanagement /> } path='state'/>
       <Route element={ <Productlist /> } path='product'/>
